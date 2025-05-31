@@ -1,4 +1,5 @@
 from pyspark.sql import *
+from pyspark.sql.functions import to_timestamp,count,hour,date_format
 import re
 
 #creating variables and funtions
@@ -29,8 +30,25 @@ print("Transformed_Data")
 df = spark.createDataFrame(data)
 df.show(truncate=False)
 
+#top visited pages 
+Top_visited_page = df.groupBy("Request").agg(count("Request").alias("Total_No_Of_Time_Visited")).orderBy("Total_No_Of_Time_Visited", ascending = False)
+print("Top visited pages")
+Top_visited_page.show(truncate=False)
 
+#Top accessed IP's
+Top_Accessed_IP = df.groupBy("IP").agg(count("IP").alias("Total_No_Of_Time_accessed")).orderBy("Total_No_Of_Time_accessed",ascending = False)
+print("Top accessed IP's")
+Top_Accessed_IP.show(truncate=False)
 
+#per hour level details
+df_timestamp_caste = df.withColumn("Timestamp",to_timestamp("Timestamp","dd/MMM/yyyy:HH:mm:ss Z")).withColumn("hour",hour("Timestamp")).withColumn("date",date_format("Timestamp","MM/dd/yyyy"))
+df_hour_level_page = df_timestamp_caste.groupBy("Request","date","hour").agg(count("Request").alias("No_Of_Time_Visited")).orderBy("No_Of_Time_Visited", ascending = False)
+df_hour_level_Ip = df_timestamp_caste.groupBy("IP","date","hour").agg(count("IP").alias("No_Of_Time_accessed")).orderBy("No_Of_Time_accessed", ascending = False)
+df_hour_level_both = df_timestamp_caste.groupBy("date","hour","IP","Request").agg(count("IP").alias("No_Of_Time_accessed")).orderBy("No_Of_Time_accessed", ascending = False)
 
-
-
+print("Ip accessed per day&hour")
+df_hour_level_Ip.show(truncate=False)
+print("pages visited per day&hour")
+df_hour_level_page.show(truncate=False)
+print("No Of Time accessed day&hour")
+df_hour_level_both.show(truncate=False)
