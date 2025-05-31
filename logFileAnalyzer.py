@@ -21,8 +21,11 @@ raw_data = spark.read.text("/content/Pyspark/access_log_sample.log")
 #calling funtion
 for i in raw_data.collect():
   a = logFileAnalyzer(i["value"])
-  
+#original_file
+print("Raw_data")
+raw_data.show(truncate=False)
 #Final_daaframe
+print("Transformed_Data")
 df = spark.createDataFrame(data)
 df.show(truncate=False)
 
