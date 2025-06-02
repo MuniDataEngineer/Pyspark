@@ -1,6 +1,6 @@
 import re
 from datetime import datetime
-----------------------------------------------------------------------------------
+
 def is_bool(val: str) -> bool:
     return str(val).strip().lower() in ["true", "false", "yes", "no", "0", "1"]
 
@@ -41,7 +41,7 @@ def try_parse_formats(val: str, formats: list) -> bool:
             continue
     return False
 
--------------------------------------------------------------------------------------
+
 
 def detect_type(val: str) -> str:
     val = str(val).strip()
@@ -61,4 +61,4 @@ def detect_type(val: str) -> str:
 
     return "string"
 
----------------------------------------------------------------------------------------
+
