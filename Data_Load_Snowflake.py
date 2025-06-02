@@ -2,6 +2,7 @@ from pyspark.sql import *
 from DataType_Detection import detect_type
 import re
 from collections import Counter
+from pyspark.sql.functions import col
 
 inferred_types = {}
 
