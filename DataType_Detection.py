@@ -47,7 +47,7 @@ def detect_type(val: str) -> str:
     val = str(val).strip()
 
     if is_null(val):
-        return "null"
+        return "string"
     if is_timestamp(val):
         return "timestamp"
     if is_date(val):
