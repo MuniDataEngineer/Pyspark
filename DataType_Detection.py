@@ -61,4 +61,3 @@ def detect_type(val: str) -> str:
 
     return "string"
 
-
