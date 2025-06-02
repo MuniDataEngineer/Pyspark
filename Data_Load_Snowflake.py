@@ -37,7 +37,7 @@ df.show(truncate=False)
 
 print("compare datatype")
 print("Raw_data")
-print(Raw_date.schema)
+print(Raw_data.schema)
 print("Transformed_data")
 print(df.schema)
 
