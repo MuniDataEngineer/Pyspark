@@ -6,15 +6,21 @@ from pyspark.sql.functions import col
 
 inferred_types = {}
 
+#get file from the user
+file_path = input("Provide the file path:")
+file_type = file_path.lower().split(".")[-1]
+
 #Sparksession
 spark = SparkSession.builder.appName("test").master("local[2]").getOrCreate()
 
 #Reading a file
-Raw_data = spark.read.format("csv").option("Header",True).load("/content/Pyspark/sample.csv")
+if file_type == "csv":
+  Raw_data = spark.read.format(file_type).option("Header",True).load(file_path)
+elif file_type == "json" or file_type == "parquet":
+  Raw_data = spark.read.format(file_type).load(file_path)
 
 #validating the field names
-new_cols = [re.sub(r"[^a-zA-Z0-9_\s]", "", col).strip().lower().replace(" ","_") for col in Raw_data.columns]
-df = Raw_data.toDF(*new_cols)
+df = fieldNameValidation(Raw_data)
 
 #sample data to get the datatype
 sample_df = df.limit(100)
