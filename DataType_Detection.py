@@ -27,9 +27,6 @@ def is_timestamp(val: str) -> bool:
     ]
     return try_parse_formats(val.strip(), formats)
 
-def is_null(val: str) -> bool:
-    return str(val).strip().lower() in ["", "null", "none", "nan"]
-
 
 
 def try_parse_formats(val: str, formats: list) -> bool:
@@ -46,8 +43,6 @@ def try_parse_formats(val: str, formats: list) -> bool:
 def detect_type(val: str) -> str:
     val = str(val).strip()
 
-    if is_null(val):
-        return "string"
     if is_timestamp(val):
         return "timestamp"
     if is_date(val):
