@@ -19,9 +19,9 @@ def type_Detection(api_key,df):
             system_instruction="You are a pyspark developer and know all the data and types."),
           contents=f"Read the dataframe {data}, predict the extact datatype, return only datatype and field as a python dictionary type and without ```python or any triple backticks."
       )
+      result = ast.literal_eval(response.text)
     except:
         print("provide the valid dataframe")
   except:
     print("provide a valid api key")
-  result = ast.literal_eval(response.text)
   return result
