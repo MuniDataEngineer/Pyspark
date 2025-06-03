@@ -4,6 +4,8 @@ from google import genai
 from google.genai import types
 import ast
 
+result = {}
+
 def type_Detection(api_key,df):
   api_key = api_key
   data = df
@@ -21,4 +23,5 @@ def type_Detection(api_key,df):
         print("provide the valid dataframe")
   except:
     print("provide a valid api key")
-  return ast.literal_eval(response.text)
+  result = ast.literal_eval(response.text)
+  return result
