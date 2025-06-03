@@ -2,6 +2,7 @@
 
 from google import genai
 from google.genai import types
+import ast
 
 def type_Detection(api_key,df):
   api_key = api_key
