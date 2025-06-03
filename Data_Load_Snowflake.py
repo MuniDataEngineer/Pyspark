@@ -3,8 +3,12 @@ from DataType_Detection import detect_type
 import re
 from collections import Counter
 from pyspark.sql.functions import col
+from Type_detection_using_genai import type_Detection
 
 inferred_types = {}
+
+#get the API key 
+api_key = input("paste your gemini api key here...")
 
 #get file from the user
 file_path = input("Provide the file path:")
@@ -33,13 +37,9 @@ df = fieldNameValidation(Raw_data)
 sample_df = df.limit(100)
 
 #to detect datatype
-for cols in sample_df.columns:
-  my_list = [row[cols] for row in sample_df.select(cols).collect()]
-  detected = [detect_type(val) for val in my_list]
-  type_counts = Counter(detected)
-  detected_type = type_counts.most_common(1)[0][0]
-  inferred_types[cols] = detected_type
-  df = df.withColumn(cols,col(cols).cast(detected_type))
+inferred_types = type_Detection(api_key,sample_df)
+for cols,types in inferred_types.items():
+  df = df.withColumn(cols,col(cols).cast(types))
 
 #results
 print("Raw_data")
