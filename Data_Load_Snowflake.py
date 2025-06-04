@@ -4,6 +4,7 @@ import re
 from collections import Counter
 from pyspark.sql.functions import col
 from Type_detection_using_genai import type_Detection
+from Field_name_validation import fieldNameValidation
 
 inferred_types = {}
 
@@ -31,7 +32,9 @@ elif file_type == "json" or file_type == "parquet":
   Raw_data = spark.read.format(file_type).load(file_path)
 
 #validating the field names
-df = fieldNameValidation(Raw_data)
+fields = [col for col in Raw_data.columns]
+new_fields = fieldNameValidation(fields)
+df = Raw_data.toDF(*new_fields)
 
 #sample data to get the datatype
 sample_df = df.limit(100)
