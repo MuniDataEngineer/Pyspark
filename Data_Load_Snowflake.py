@@ -18,13 +18,6 @@ file_type = file_path.lower().split(".")[-1]
 #Sparksession
 spark = SparkSession.builder.appName("test").master("local[2]").getOrCreate()
 
-#validate logic function the field names
-def fieldNameValidation(Raw_data):
-  new_cols = [re.sub(r"[^a-zA-Z0-9_\s]", "", col).strip().lower().replace(" ","_") for col in Raw_data.columns]
-  new_df = Raw_data.toDF(*new_cols)
-  return new_df
-
-
 #Reading a file
 if file_type == "csv":
   Raw_data = spark.read.format(file_type).option("Header",True).load(file_path)
