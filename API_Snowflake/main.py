@@ -45,7 +45,7 @@ def get_product_name(product_id: str, request: Request):
         cur = conn.cursor()
 
         # Execute Snowflake query
-        cur.execute("SELECT product_name FROM product_table WHERE product_id = %s", (product_id,))
+        cur.execute(f"SELECT product_name FROM product_table WHERE product_id = '{product_id}'")
         row = cur.fetchone()
 
         cur.close()
