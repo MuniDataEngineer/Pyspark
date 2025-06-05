@@ -7,6 +7,7 @@ import os
 # Load environment variables
 load_dotenv()
 
+
 app = FastAPI()
 
 # Enable CORS
