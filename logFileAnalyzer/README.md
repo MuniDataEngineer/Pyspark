@@ -11,11 +11,11 @@ It's useful for preparing the data for downstream analytics or storage systems.
 - SparkSession
 
 ## 📁 Folder Structure
-logFileAnalyzer/
+`logFileAnalyzer/
 ├── main.py # Main script to read and process log files using PySpark
 ├── requirements.txt # Required Python packages
 └── data/
-└── sample.log # Sample log file
+└── sample.log # Sample log file`
 
 ## ▶️ How to Run 
 ⚠️ **Important:** Run this notebook in Google Colab for the best experience.
