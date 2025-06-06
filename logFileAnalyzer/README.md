@@ -19,6 +19,6 @@ It's useful for preparing the data for downstream analytics or storage systems.
 3. Run the main.py file:
 `%run /content/Pyspark/logFileAnalyzer/main.py`
 
-##🌐Colab
+🌐Colab
 🔗 https://colab.research.google.com/
 
