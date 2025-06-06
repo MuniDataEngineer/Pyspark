@@ -12,11 +12,9 @@ The processed data can be prepared for loading into any downstream system like a
 
 ## ▶️ How to Run 
 ⚠️ **Important:** Run this on the notebook in Google Colab for the best experience.
-1. Install dependencies(🟡Optional):
-`!pip install -r requirements.txt`
-2. Clone the repository:
+1. Clone the repository:
 `!git clone https://github.com/MuniDataEngineer/Pyspark.git`
-3. Run the main.py file:
+2. Run the main.py file:
 `%run /content/Pyspark/Retail_Sales_Analysis/main.py`
 
 🌐Colab
