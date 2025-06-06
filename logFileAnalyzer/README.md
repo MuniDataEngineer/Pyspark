@@ -1,4 +1,4 @@
-# 📁 Log File Reader and Transformer using PySpark
+# 📁 Log File Analyzer
 
 ## 📌 Description
 This project reads raw `.log` files and processes them using **PySpark** to extract structured information. 
@@ -10,7 +10,13 @@ It's useful for preparing the data for downstream analytics or storage systems.
 - Regular Expressions (`re`)
 - SparkSession
 
-<pre> ## 📁 Folder Structure ``` logFileAnalyzer/ ├── main.py ├── requirements.txt └── data/ └── sample.log ``` </pre>
+## 📁 Folder Structure
+logFileAnalyzer/
+├── main.py
+├── requirements.txt
+└── data/
+└── sample.log
+
 
 ## ▶️ How to Run 
 ⚠️ **Important:** Run this notebook in Google Colab for the best experience.
