@@ -1,6 +1,5 @@
 from pyspark.sql.functions import col, explode_outer,to_json
 from pyspark.sql.types import StructType,ArrayType
-import re
 from fieldNameValidation import fieldNameValidation
 
 def jsonHandler(df):
