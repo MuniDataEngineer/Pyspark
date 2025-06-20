@@ -1,0 +1,15 @@
+[
+    {
+        "user_id": "u123",
+        "profile": {
+            "name": "Jane Doe",
+            "age": 29,
+            "address": {
+                "street": "123 Main St",
+                "city": "San Francisco",
+                "zip": "94105"
+            }
+        },
+        "account_status": "active"
+    }
+]
