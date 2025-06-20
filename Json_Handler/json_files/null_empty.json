@@ -1,0 +1,14 @@
+[
+    {
+        "id": 101,
+        "name": "Tester",
+        "email": null,
+        "phone": "",
+        "meta": {}
+    },
+    {
+        "id": 102,
+        "name": "Empty Fields",
+        "email": "empty@example.com"
+    }
+]
