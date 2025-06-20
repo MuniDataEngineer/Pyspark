@@ -5,7 +5,7 @@ This repository contains multiple hands-on PySpark projects. Each project is org
 
 ## 📂 Projects  
 Each project folder includes:
-- 📄 `main.py` file with core logic   
+- 📄 `main.py` file with a logic to start the app  
 - 📘 `README.md` with project-specific documentation and instructions
 
 ## 📫 Contact
