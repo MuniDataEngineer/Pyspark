@@ -1,0 +1,21 @@
+[
+    {
+        "product_id": "p001",
+        "name": "Laptop",
+        "tags": [
+            "electronics",
+            "computer",
+            "portable"
+        ],
+        "prices": [
+            {
+                "region": "US",
+                "price": 1000
+            },
+            {
+                "region": "EU",
+                "price": 1200
+            }
+        ]
+    }
+]
