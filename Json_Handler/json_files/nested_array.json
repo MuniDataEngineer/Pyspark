@@ -1,0 +1,31 @@
+[
+    {
+        "order_id": "o456",
+        "customer": {
+            "id": "c789",
+            "name": "John Smith",
+            "contact": {
+                "email": "john@example.com",
+                "phone": "123-456-7890"
+            }
+        },
+        "items": [
+            {
+                "item_id": "i1",
+                "name": "Phone",
+                "qty": 2,
+                "price": 500
+            },
+            {
+                "item_id": "i2",
+                "name": "Headphones",
+                "qty": 1,
+                "price": 200
+            }
+        ],
+        "payment": {
+            "method": "credit_card",
+            "status": "paid"
+        }
+    }
+]
