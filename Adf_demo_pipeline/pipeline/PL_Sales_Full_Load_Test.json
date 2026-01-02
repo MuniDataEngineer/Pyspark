@@ -108,7 +108,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"p_Schema": "dbo",
-							"p_Table": "Sales"
+							"p_Table": "Inventory"
 						}
 					}
 				],
