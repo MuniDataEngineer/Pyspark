@@ -1,0 +1,9 @@
+{
+	"name": "Demoadfpipe",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4074cd49-a569-4d5f-8a2f-6df55b20eb64",
+		"tenantId": "b1110b21-598f-4d94-897e-90e4c03c29d7"
+	}
+}
