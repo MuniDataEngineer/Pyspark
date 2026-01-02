@@ -45,8 +45,14 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "Sales"
+			"schema": {
+				"value": "@dataset().p_Schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().p_Table",
+				"type": "Expression"
+			}
 		}
 	}
 }
