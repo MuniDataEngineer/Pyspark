@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Demoadfpipe"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"LS_ADLS_Raw_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_Inventory_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "sqldb-retail-source.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "RetailDB"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "Arun"
+		},
+		"LS_ADLS_Raw_properties_typeProperties_url": {
+			"value": "https://demostorge03.dfs.core.windows.net/"
+		},
+		"LS_SQL_Inventory_properties_typeProperties_server": {
+			"value": "sqldb-retail-source.database.windows.net"
+		},
+		"LS_SQL_Inventory_properties_typeProperties_database": {
+			"value": "onprem"
+		},
+		"LS_SQL_Inventory_properties_typeProperties_userName": {
+			"value": "Arun"
+		},
+		"Rest_api_properties_typeProperties_url": {
+			"value": "https://dummyjson.com/products"
+		}
+	}
+}
