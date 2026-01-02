@@ -6,10 +6,10 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"dbo": {
+			"p_Schema": {
 				"type": "string"
 			},
-			"Sales": {
+			"p_Table": {
 				"type": "string"
 			}
 		},
