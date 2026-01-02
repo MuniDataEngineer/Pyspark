@@ -13,7 +13,6 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
@@ -106,13 +105,20 @@
 				"inputs": [
 					{
 						"referenceName": "DS_AzureSQL_Sales",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"p_Schema": "dbo",
+							"p_Table": "Sales"
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "DS_ADLS_Sales_Raw",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"p_Folder": "raw/sales/"
+						}
 					}
 				]
 			}
