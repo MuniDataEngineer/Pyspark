@@ -5,13 +5,20 @@
 			"referenceName": "LS_ADLS_Raw",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"p_Folder": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "sales",
-				"fileSystem": "raw"
+				"fileSystem": {
+					"value": "@dataset().p_Folder\n",
+					"type": "Expression"
+				}
 			},
 			"compressionCodec": "snappy"
 		},
