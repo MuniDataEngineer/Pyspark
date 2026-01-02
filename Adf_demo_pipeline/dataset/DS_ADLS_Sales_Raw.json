@@ -1,0 +1,20 @@
+{
+	"name": "DS_ADLS_Sales_Raw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_Raw",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "sales",
+				"fileSystem": "raw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
