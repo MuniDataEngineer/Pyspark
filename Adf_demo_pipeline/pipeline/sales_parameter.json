@@ -51,17 +51,58 @@
 				"inputs": [
 					{
 						"referenceName": "sales_parameter",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"server_name": {
+								"value": "@pipeline().parameters.Server_name",
+								"type": "Expression"
+							},
+							"db_name": {
+								"value": "@pipeline().parameters.db_name",
+								"type": "Expression"
+							},
+							"schema_name": {
+								"value": "@pipeline().parameters.schema_name",
+								"type": "Expression"
+							},
+							"tbl_name": {
+								"value": "@pipeline().parameters.table_name",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "DS_ADLS_Sales_Raw",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"p_Folder": {
+								"value": "@pipeline().parameters.url",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"Server_name": {
+				"type": "String"
+			},
+			"db_name": {
+				"type": "String"
+			},
+			"table_name": {
+				"type": "String"
+			},
+			"schema_name": {
+				"type": "String"
+			},
+			"url": {
+				"type": "String"
+			}
+		},
 		"variables": {
 			"SQL_Query": {
 				"type": "String"
