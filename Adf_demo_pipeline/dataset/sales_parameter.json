@@ -1,0 +1,46 @@
+{
+	"name": "sales_parameter",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dynamic_SQLserver connection",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"Sql_server": {
+					"value": "@dataset().server_name",
+					"type": "Expression"
+				},
+				"db_name": {
+					"value": "@dataset().db_name",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"server_name": {
+				"type": "string"
+			},
+			"db_name": {
+				"type": "string"
+			},
+			"schema_name": {
+				"type": "string"
+			},
+			"tbl_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().schema_name",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tbl_name",
+				"type": "Expression"
+			}
+		}
+	}
+}
