@@ -13,9 +13,14 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
+				"userProperties": [],
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "SELECT * FROM p_Schema.p_Table",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -105,11 +110,7 @@
 				"inputs": [
 					{
 						"referenceName": "DS_AzureSQL_Sales",
-						"type": "DatasetReference",
-						"parameters": {
-							"p_Schema": "dbo",
-							"p_Table": "Inventory"
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
